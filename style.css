@@ -1,0 +1,170 @@
+/* ====== GLOBAL ====== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+body {
+  background: radial-gradient(circle at top left, #4f46e5, #7c3aed, #0ea5e9);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow-x: hidden;
+}
+
+/* ====== CONTAINER ====== */
+.app {
+  width: 95%;
+  max-width: 480px;
+  background: rgba(255, 255, 255, 0.12);
+  border-radius: 24px;
+  box-shadow: 0 0 40px rgba(0,0,0,0.3);
+  backdrop-filter: blur(20px);
+  padding: 24px;
+  color: #fff;
+  animation: fadeIn 1.2s ease-out;
+}
+
+/* ====== HEADER ====== */
+.logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+.logo span {
+  font-size: 2rem;
+  animation: spin 4s linear infinite;
+}
+.title {
+  text-align: center;
+  font-weight: 700;
+  font-size: 1.6rem;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ====== BUTTON TOGGLE ====== */
+.mode-toggle {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin: 16px 0;
+}
+.mode-btn {
+  padding: 8px 20px;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: 0.3s;
+}
+.active {
+  background: #fff;
+  color: #4f46e5;
+}
+.inactive {
+  background: transparent;
+  border: 2px solid #fff;
+  color: #fff;
+}
+.inactive:hover { background: rgba(255,255,255,0.2); }
+
+/* ====== SUBJECTS ====== */
+.subjects {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+  margin: 20px 0;
+}
+.subject {
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 16px;
+  text-align: center;
+  padding: 16px 10px;
+  font-weight: 600;
+  transition: transform 0.3s, background 0.3s, border 0.3s;
+  cursor: pointer;
+}
+.subject:hover {
+  transform: translateY(-6px) scale(1.05);
+  background: rgba(255, 255, 255, 0.35);
+}
+
+/* ====== QUESTION BOX ====== */
+.question {
+  margin-top: 10px;
+}
+textarea {
+  width: 100%;
+  height: 100px;
+  border-radius: 12px;
+  border: none;
+  outline: none;
+  resize: none;
+  padding: 12px;
+  font-size: 1rem;
+}
+
+/* ====== BUTTON ====== */
+.submit-btn {
+  width: 100%;
+  margin-top: 16px;
+  padding: 14px;
+  border: none;
+  border-radius: 12px;
+  background: linear-gradient(90deg, #8b5cf6, #6366f1, #3b82f6);
+  color: #fff;
+  font-size: 1.1rem;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 0 12px rgba(99,102,241,0.6);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+.submit-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 0 20px rgba(99,102,241,0.9);
+}
+
+/* ====== ANSWER BOX & COPY ====== */
+#answerBox {
+  margin-top: 12px;
+  background: rgba(255,255,255,0.2);
+  border-radius: 12px;
+  padding: 12px;
+  min-height: 80px;
+  white-space: pre-wrap;
+  font-weight: 500;
+}
+#copyBtn {
+  display: block;
+  margin: 8px auto;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 12px;
+  background: #6366f1;
+  color: white;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+/* ====== FOOTER ====== */
+footer {
+  text-align: center;
+  font-size: 0.85rem;
+  opacity: 0.8;
+  margin-top: 18px;
+}
+footer span { color: #fff; font-weight: 600; }
